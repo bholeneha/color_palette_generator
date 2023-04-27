@@ -8,7 +8,9 @@ openai.api_key = config['OPENAI_API_KEY']
 
 app = Flask(
         __name__,
-        template_folder = 'templates'
+        template_folder = 'templates',
+        static_url_path='',
+        static_folder='static'
 )
 
 def get_colors(input):
@@ -49,4 +51,4 @@ def prompt_to_palette():
     return {"colors": colors}
 
 if __name__ == "__main__":
-        app.run(debug=True, port=3000)
+        app.run(debug=True)
